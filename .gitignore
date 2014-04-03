@@ -1,4 +1,3 @@
-.DS_Store
 .vagrant
 Berksfile.lock
 *~
@@ -16,3 +15,18 @@ bin/*
 
 .kitchen/
 .kitchen.local.yml
+
+# OSX files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# OSX: Icon must ends with two \r.
+Icon
+
+# OSX: Thumbnails
+._*
+
+# OSX: Files that might appear on external disk
+.Spotlight-V100
+.Trashes
