@@ -2,9 +2,8 @@ require 'spec_helper'
 
 describe "wonderstuff::default" do
   let(:chef_run) do
-    runner = ChefSpec::ChefRunner.new(
-      log_level: :error,
-      cookbook_path: COOKBOOK_PATH,
+    runner = ChefSpec::Runner.new(
+      log_level: :error
     )
     Chef::Config.force_logger true
     runner.converge('recipe[wonderstuff::default]')
