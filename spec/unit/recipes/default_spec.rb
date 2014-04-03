@@ -10,18 +10,18 @@ describe "wonderstuff::default" do
   end
 
   it "installs the lighttpd package" do
-    expect(chef_run).to install_package 'lighttpd'
+    expect(chef_run).to install_package('lighttpd')
   end
 
   it "creates a webpage to be served" do
-    expect(chef_run).to create_file_with_content '/var/www/index.html', 'Wonderstuff Design is a boutique graphics design agency.'
+    expect(chef_run).to render_file('/var/www/index.html').with_content('Wonderstuff Design is a boutique graphics design agency.')
   end
 
   it "starts the lighttpd service" do
-    expect(chef_run).to start_service 'lighttpd'
+    expect(chef_run).to start_service('lighttpd')
   end
 
   it "enables the lighttpd service" do
-    expect(chef_run).to set_service_to_start_on_boot 'lighttpd'
+    expect(chef_run).to enable_service('lighttpd')
   end
 end
