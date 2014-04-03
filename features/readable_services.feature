@@ -8,7 +8,7 @@ Feature: Potential customer can read about services
 
     Given I have provisioned the following infrastructure:
     | Server Name | Operating System | Version | Chef Version | Run List       |
-    | wonderstuff | ubuntu           |   12.04 |       11.4.4 | wonderstuff::default |
+    | wonderstuff | ubuntu           |   12.04 |      11.10.4 | wonderstuff::default |
     And I have run Chef
 
   Scenario: User visits home page
