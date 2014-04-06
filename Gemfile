@@ -7,6 +7,7 @@ group :development do
   gem 'kitchen-vagrant'
   gem 'guard', '>=2.1.1'
   gem 'guard-foodcritic', '>= 1.0'
+  gem 'guard-rspec', '>= 4.2'
   gem 'foodcritic', '>= 3.0'
   gem 'chefspec', '>= 3.1'
   gem 'cucumber'
