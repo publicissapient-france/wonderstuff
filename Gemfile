@@ -5,6 +5,8 @@ gem 'berkshelf'
 group :development do  
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
+  gem 'guard'
+  gem 'guard-foodcritic'
   gem 'foodcritic'
   gem 'chefspec'
   gem 'cucumber'
