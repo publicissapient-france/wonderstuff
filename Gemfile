@@ -9,6 +9,7 @@ group :development do
   gem 'guard-foodcritic', '>= 1.0'
   gem 'guard-rspec', '>= 4.2'
   gem 'foodcritic', '>= 3.0'
+  gem 'rubocop', '>= 0.20'
   gem 'chefspec', '>= 3.1'
   gem 'cucumber'
   gem 'rspec-expectations'
