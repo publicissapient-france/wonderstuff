@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf', '~> 3.0.0.beta8'
+gem 'berkshelf', '~> 3.0.0.beta9'
 
 group :development do  
   gem 'guard', '>=2.1.1'

@@ -1,7 +1,21 @@
 rvm:
   - 1.9.3
+
+# Temporarly doing this because needed for berkshelf 3.0.0.beta9 
+# see https://github.com/berkshelf/berkshelf/blob/7060813e488735402caa0b463e2e37e521f4f3e5/README.md
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq libgecode-dev
+
+# The default command run by Travis CI is: bundle install
+
 bundler_args: --without development
-before_script:
-  - bundle exec berks install
+
+branches:
+  only:
+    - master
+    - /^deploy-ci-.*$/
+
 script: 
   - bundle exec foodcritic -f any .
+    
