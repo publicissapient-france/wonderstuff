@@ -7,6 +7,7 @@ group :development do
   gem 'guard-foodcritic', '>= 1.0'
   gem 'guard-rspec', '>= 4.2'
   gem 'guard-rubocop'
+  gem 'guard-kitchen'
 end
 
 group :integration do
