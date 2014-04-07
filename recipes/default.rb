@@ -2,8 +2,8 @@
 # Cookbook Name:: wonderstuff
 # Recipe:: default
 #
-# Copyright (C) 2014 YOUR_NAME
-# 
+# Copyright (C) 2014 Emmanuel Sciara
+#
 # All rights reserved - Do Not Redistribute
 #
 

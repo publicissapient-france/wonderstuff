@@ -8,6 +8,7 @@ group :development do
   gem 'guard', '>=2.1.1'
   gem 'guard-foodcritic', '>= 1.0'
   gem 'guard-rspec', '>= 4.2'
+  gem 'guard-rubocop'
   gem 'foodcritic', '>= 3.0'
   gem 'rubocop', '>= 0.20'
   gem 'chefspec', '>= 3.1'
