@@ -16,6 +16,7 @@ branches:
     - master
     - /^deploy-ci-.*$/
 
-script: 
+script:
   - bundle exec foodcritic -f any .
+  - bundle exec rubocop
     
