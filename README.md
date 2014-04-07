@@ -1,3 +1,4 @@
+Master branch: [![Build Status](https://travis-ci.org/esciara/wonderstuff.png?branch=master)](https://travis-ci.org/esciara/wonderstuff)
 # wonderstuff cookbook
 
 # Requirements
