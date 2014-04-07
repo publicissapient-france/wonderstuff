@@ -1,7 +1,8 @@
-require 'chefspec'  
+# encoding: UTF-8
+require 'chefspec'
 require 'chefspec/berkshelf'
 
-RSpec.configure do |config|  
+RSpec.configure do |config|
   config.platform = 'ubuntu'
   config.version = '12.04'
-end    
+end
