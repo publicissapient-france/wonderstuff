@@ -1,3 +1,7 @@
+# Always run on http://lint.travis-ci.org/ to check validity
+# (did not install gem as it is downgrading test-kitchen to 1.1.1)
+language: ruby
+
 rvm:
   - 1.9.3
 
@@ -18,4 +22,4 @@ branches:
 script:
   - bundle exec foodcritic -f any .
   - bundle exec rubocop
-    
+  - bundle exec rspec -fd
