@@ -1,7 +1,7 @@
 language: ruby
 bundler_args: --without kitchen_vagrant --without development
 rvm:
-- 2.1.0
+  - 2.1.0
 cache:
   bundler: true
 before_install:
@@ -10,9 +10,9 @@ before_install:
   - cat ~/.ssh/id_do.base64 | tr -d ' ' | base64 --decode > ~/.ssh/travis.pem
   - ls -la ~/.ssh
 script: 
-#  - bundle exec foodcritic -f any .
-#  - bundle exec rubocop
-#  - bundle exec rspec -fd
+  - bundle exec foodcritic -f any .
+  - bundle exec rubocop
+  - bundle exec rspec -fd
   - bundle exec kitchen test $KITCHEN_INSTANCE
 after_script:
   - bundle exec kitchen destroy
@@ -50,5 +50,6 @@ env:
     - secure: KEXnO9D76cZBI9Nte4aX+J5Puv/Z4JzsjUWponEEXkPvdCbVn/LexLbEIrKlWUK25A/xDZEkozSfixy81GtC1cUzVTqsKCoyUN/AKYu3braiqJu51KdWQodToNNqwElBZXdOY/07/BB6QDwC2QGr6hm/OHMwprD3pSYUqOQ9F84=
     - secure: iR1QM40LUC1o9Dd2BUGYzvhOsgwiLO4rCUBS2OMNBOC0QJMqXk9GZpWdR1ejX1Ljv0q2XWVIJzfdYt0WXMfblNLC65hYOSd+lF5o+JeDBuSQBynzMMCGz5rBZR23TnWgkpuQNbDyt1vnPTbdNzkS0v+yW0F00Vd40yI1vMQHgug=
     - secure: ckXh8Fb8Cp1G6NQKm/vMV7aRQd4OEPbp47fQNr29i9WaxaSZP+WycpeBi1m5O+MpiyL3OSSD3utvbchjiFsvvBfsiYUfmFB3Av43rc5eiOmg3sh41/dFzE/2hPU7pe5fkGnh60eEO9nn38A9kYD6G/6fnclW3MqvA4pnej7bgRM=
+    - secure: lG5VFBL4+40Gm+dJRHfiqhU72+KBJmP5wrg1Ombe7sPmM7w9NUgTIIWV9lM7XYIwKWdK9RCixN9KT6st5VtqjX1tatL6G0nle3TIPE1jjB0kCb+BdGWP1LO5A6g87Us0/sxIUywLLC0fe7QX7b96n9GuYqRSzDWvHnVmq1JdCtw=
   matrix:
     - KITCHEN_INSTANCE='default-ubuntu-1204'
