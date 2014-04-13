@@ -53,7 +53,7 @@ bundle exec kitchen verify # uses existing VMs if exists. Carefull: recipe chang
 ```
 
 I did not implement the tests using [`Leibniz`](https://github.com/Atalanta/leibniz), (or rather
-[I did](https://github.com/esciara/wonderstuff/tree/b6a383a41706a87e9908a3693d4466bfa400fb41) but then
+[I did](https://github.com/esciara/wonderstuff/tree/6bbbd847fc71258e09e92070df67497b109a5a51) but then
 removed it) as the tool is not being actively developed or supported
 (code untouched since 5 months as the time of this writing and only supports `test-kitchen 1.0.0.alpha`).
 
