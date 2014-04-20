@@ -14,7 +14,6 @@ bin/*
 .bundle/*
 
 .kitchen/
-.kitchen.local.yml
 
 # Covers OSX
 ## OSX files
