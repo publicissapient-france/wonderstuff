@@ -1,14 +1,43 @@
+<%
+@in_travis_env = false
+ENV['TRAVIS'].nil? ? () : (ENV['TRAVIS'].downcase == 'true' ? (@in_travis_env = true) : ())
+
+@in_travis_env ? (puts "Detected Travis. Using Cloud settings.") : (puts "No Travis detected. Using Vagrant settings.")
+%>
+
 ---
-driver_plugin: vagrant
-driver_config:
+driver:
+<% if @in_travis_env %>
+  digitalocean_client_id: <%= ENV['DIGITAL_OCEAN_CLIENT_ID'] %>
+  digitalocean_api_key: <%= ENV['DIGITAL_OCEAN_API_KEY'] %>
+<% else %>
+  name: vagrant
+  customize:
+    memory: 1024
+<% end %>
+
+provisioner:
+  name: chef_zero
   require_chef_omnibus: true
 
 platforms:
   - name: ubuntu-12.04
-#  - name: centos-6.4
+    driver:
+<% if @in_travis_env %>
+      name: digitalocean
+      image_id: 3101045
+      flavor_id: 66
+      region_id: 4
+      ssh_key_ids: <%= ENV['DIGITAL_OCEAN_SSH_KEY_IDS'] %>
+      ssh_key: <%= ENV['DIGITAL_OCEAN_SSH_KEY_PATH'] %>
+<% end %>
 
 suites:
   - name: default
+<% if @in_travis_env %>
+    driver:
+      server_name: wonderstuff-server
+<% end %>
     run_list:
       - recipe[wonderstuff::default]
     attributes:
