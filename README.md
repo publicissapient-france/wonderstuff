@@ -40,8 +40,20 @@ This repo implements the tests of the book (Chapter "Acceptance Testing: Cucumbe
 * [`ChefSpec`](https://github.com/sethvargo/chefspec) as a unit test tool
 * [`ServerSpec`](http://serverspec.org/) as an integration test tool
 
+`ChefSpec` tests are run using:
+```
+bundle exec rspec -fd
+```
+
+`ServerSpec` tests are run using one of the following options:
+```
+bundle exec kitchen test   # destroys and rebuilds completely the VMs before doing the tests
+or
+bundle exec kitchen verify # uses existing VMs if exists. Carefull: recipe changed => kitchen converge
+```
+
 I did not implement the tests using [`Leibniz`](https://github.com/Atalanta/leibniz), (or rather
-[I did](https://github.com/esciara/wonderstuff/tree/b6a383a41706a87e9908a3693d4466bfa400fb41) but then
+[I did](https://github.com/esciara/wonderstuff/tree/6bbbd847fc71258e09e92070df67497b109a5a51) but then
 removed it) as the tool is not being actively developed or supported
 (code untouched since 5 months as the time of this writing and only supports `test-kitchen 1.0.0.alpha`).
 
@@ -58,6 +70,20 @@ also added to the mix:
 I found the following series of articles useful to set this up:
 https://micgo.net/automating-cookbook-testing-with-test-kitchen-berkshelf-vagrant-and-guard/
 
+`Foodcritic` checks are run using:
+```
+bundle exec foodcritic -f any .
+```
+
+`Rubocop` checks are run using:
+```
+bundle exec rubocop
+```
+
+`Guard` should really be started on a different session using:
+```
+bundle exec guard
+```
 
 # Continuous Integration
 
@@ -67,7 +93,7 @@ To make sure that committed code is tested, and since we are on GitHub, I implem
 (https://travis-ci.org/esciara/wonderstuff) which is free for public repositories.
 
 But since I concluded [after a little searching](https://github.com/bflad/chef-confluence/issues/5#issuecomment-40249093)
-that `test-kitchen` can probably not really a VM inside the `Travis` VM,
+that `test-kitchen` can probably not really run a VM inside the `Travis` VM,
 I looked on how to have VMs build from scratch to validate the cookbooks by running all the tests on each push.
 
 I found a great example in https://github.com/opscode-cookbooks/tomcat/blob/master/TESTING.md and am using
