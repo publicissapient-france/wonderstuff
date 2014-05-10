@@ -1,19 +1,29 @@
-.vagrant
+# Berkshelf
 Berksfile.lock
+/cookbooks
+
+# Bundler
+.bundle
+bin/
+Gemfile.lock
+
+# Chef
+metadata.json
+tmp/
+
+# Editors
 *~
 *#
 .#*
 \#*#
 .*.sw[a-z]
 *.un~
-/cookbooks
 
-# Bundler
-Gemfile.lock
-bin/*
-.bundle/*
-
+# Test Kitchen
 .kitchen/
+
+# Vagrant
+.vagrant
 
 # Covers OSX
 ## OSX files
