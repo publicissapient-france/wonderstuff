@@ -1,5 +1,5 @@
-Master branch: [![Build Status](https://travis-ci.org/esciara/wonderstuff.png?branch=master)]
-(https://travis-ci.org/esciara/wonderstuff)
+Master branch: [![Build Status](https://travis-ci.org/xebia-france/wonderstuff.png?branch=master)]
+(https://travis-ci.org/xebia-france/wonderstuff)
 # Wonderstuff cookbook
 
 This cookbook is an implementation of the wonderstuff example from the
